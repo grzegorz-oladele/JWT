@@ -7,5 +7,5 @@ import pl.grzegorz.JWT.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findUserByName(String name);
+    User findByUsername(String username);
 }

@@ -1,24 +1,24 @@
 package pl.grzegorz.JWT.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "roles")
 @Getter
 @Setter
-public class Role implements GrantedAuthority {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
-
-    @Override
-    public String getAuthority() {
-        return name;
-    }
 }
